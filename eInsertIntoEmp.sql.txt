@@ -1,7 +1,0 @@
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `eInsertIntoEmp`(uname varchar(128),pwd varchar(128), fname varchar(128), lname varchar(128),sup int)
-BEGIN
-INSERT INTO employee (username, password, firstname, lastname, supervisor)
-VALUES (uname,pwd,fname,lname,sup);
-END$$
-DELIMITER ;

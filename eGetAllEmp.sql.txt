@@ -1,7 +1,0 @@
-DELIMITER $$
-CREATE DEFINER=`root`@`localhost` PROCEDURE `eGetAllEmp`()
-BEGIN
-SELECT username, firstname, lastname, supervisor
-FROM employee
-END$$
-DELIMITER ;
