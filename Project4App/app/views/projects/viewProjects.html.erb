@@ -1,0 +1,52 @@
+
+<nav class="navbar navbar-inverse" style="border-radius:0px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Project 4</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Projects</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="../welcome/logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container">
+  <div class ="jumbotron">
+    <h2>Welcome <%= @empfirstname %>.<br> </h2>
+    <p>You are currently assigned to the <b> <%= @currentProject %></b> project</p>
+
+    <p>
+      You are expected to report to your supervisor(s), <%= @firstsups %>
+      at the <%= @location %>. For more information click on the project details button
+    </p>
+    <input type="button" class="btn btn-primary" value="Project Details">
+  </div>
+  <h2>Past and Future Projects</h2>
+  <table class="table table-bordered table-hover">
+    <thead>
+      <td>Project Name</td>
+      <td>Supervisors</td>
+      <td>Start Date</td>
+      <td>End Date</td>
+    </thead>
+    <tbody>
+    <%iterate = 0%>
+    <%while iterate < @counter  do %>
+      <tr>
+        <td>
+              <%= @employeeProjects[iterate]["pname"]%>
+        </td>
+        <td>
+         <%= @employeeProjects[iterate]["sups"]%>
+        </td>
+        <td><%= @employeeProjects[iterate]["start_date"]%></td>
+        <td><%= @employeeProjects[iterate]["end_date"]%></td>
+      </tr>
+        <%iterate += 1%>
+    <%end%>
+    </tbody>
+  </table>
+</div>
